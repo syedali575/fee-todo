@@ -5,29 +5,46 @@
   console.log("I am js ui file");
 
 // Function creation to add new todo list item
-  function newElement() {
-    // For creation of new li
+  function addListItem() {
+    // For creation of new list item
     var li = document.createElement("li");
-    //
-    var inputValue = document.getElementsByClassName(".to-do").value;
+    // For grabbing text in form input to put on list item
+    var inputValue = document.querySelector(".to-do").value;
+    // For creating text node for new list item text to reside
     var newTodo = document.createTextNode(inputValue)
-    //Adding text to new todo line item.
+    // // Adding text to new todo line item.
     li.appendChild(newTodo);
-    // Adding new todo list item to UL
-    document.getElementsByClassName(".")
-
-
-    document.getElementsByClassName(".items").appendChild(li);
-    document.getElementsByClassName(".to-do").value = "";
-
+    // // Adding new todo list item to UL
+    // document.querySelector(".items")appendChild(li);
+    //
+    // document.querySelector(".to-do").value = "";
   }
+
 
 
 /////////////////////////////////////
   document
-    .querySelector(".new-todo")
-    .addEventListener("click", function addListItem (eventObj) {
-    eventObj.target.style.color = "green";
+    .querySelector("form")
+    .addEventListener("submit", function addListItem(eventObj) {
+      console.log(eventObj);
+      eventObj.preventDefault();
+
+      // console.log("Hello");
+
+      var li = document.createElement("li");
+      console.log("li");
+      // For grabbing text in form input to put on list item
+      var inputValue = document.querySelector(".new-todo").value;
+      console.log(inputValue);
+      // For creating text node for new list item text to reside
+      li.innerText = inputValue;
+      li.classList.add("new-item");
+      // // Adding text to new todo line item.
+      document.querySelector("ul").appendChild(li);
+      console.log("hello");
+      // li.appendChild(newTodo);
+
+
     })
 
 
