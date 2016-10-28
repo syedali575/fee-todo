@@ -2,58 +2,50 @@
   window.todos = window.todos || {};
 
 
-  console.log("I am js ui file");
 
-// Function creation to add new todo list item
-  function addListItem() {
-    // For creation of new list item
-    var li = document.createElement("li");
-    // For grabbing text in form input to put on list item
-    var inputValue = document.querySelector(".to-do").value;
-    // For creating text node for new list item text to reside
-    var newTodo = document.createTextNode(inputValue)
-    // // Adding text to new todo line item.
-    li.appendChild(newTodo);
-    // // Adding new todo list item to UL
-    // document.querySelector(".items")appendChild(li);
-    //
-    // document.querySelector(".to-do").value = "";
-  }
-
-
-
-/////////////////////////////////////
   document
     .querySelector("form")
     .addEventListener("submit", function addListItem(eventObj) {
-      console.log(eventObj);
+
       eventObj.preventDefault();
 
-      // console.log("Hello");
-
       var li = document.createElement("li");
-      console.log("li");
-      // For grabbing text in form input to put on list item
       var inputValue = document.querySelector(".new-todo").value;
-      console.log(inputValue);
-      // For creating text node for new list item text to reside
-      li.innerText = inputValue;
-      li.classList.add("new-item");
-      // // Adding text to new todo line item.
-      document.querySelector("ul").appendChild(li);
-      console.log("hello");
-      // li.appendChild(newTodo);
+
+      var addArticle = document.createElement("article");
+
+
+      var addButton = document.createElement("button");
+      addButton.classList.add("check");
+      addArticle.appendChild(addButton);
+
+      var addP = document.createElement("p");
+      addP.innerText = inputValue;
+      addArticle.appendChild(addP);
+
+      var addXbutton = document.createElement("button");
+      addXbutton.classList.add("delete");
+      addXbutton.innerText = "X";
+      addArticle.appendChild(addXbutton);
+
+      li.appendChild(addArticle);
+
+      document.querySelector(".items").appendChild(li);
 
 
     })
 
 
+  document.querySelector("article")
+  .addEventListener("click", function complete(event) {
+  event.target.classList.add("completed");
+  console.log("I am here");
 
 
 
 
 
-
+  })
 
 
 
