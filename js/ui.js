@@ -50,21 +50,41 @@
       document.querySelector(".items").appendChild(newList);
 
 
+      // Creation of new array to hold new todos
+      var listItem = [];
 
 
     });
 
 
-//   document.querySelector(".check")
-//   .addEventListener("click", function complete(event) {
-//   event.target.classList.add("completed");
-//   console.log("I am here");
-//
-//
-//
-//
-//
-// });
+      // This function is to put a line through on completed
+  // document
+  //     .querySelector(".items")
+  //     .addEventListener("click", function lineThrough(line){
+  //     console.log(line.target);
+  //
+  //     document.querySelector("article").classList.toggle("completed");
+  //
+  //     console.log("I am here");
+  //
+  //   });
+
+
+    document
+        .querySelector(".items")
+        .addEventListener("click", function lineThrough(line){
+        console.log(line.target);
+
+        document.querySelector("article").classList.toggle("completed");
+
+        console.log("I am here");
+
+      });
+
+
+
+
+
 
 
 
