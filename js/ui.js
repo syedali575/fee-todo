@@ -58,36 +58,21 @@
 
 
       // This function is to put a line through on completed
-  // document
-  //     .querySelector(".items")
-  //     .addEventListener("click", function lineThrough(line){
-  //     console.log(line.target);
-  //
-  //     document.querySelector("article").classList.toggle("completed");
-  //
-  //     console.log("I am here");
-  //
-  //   });
-
-
-      // This function is to put a line through on completed
     document
         .querySelector(".items")
         .addEventListener("click", function lineThrough(line){
         line.target.parentNode.classList.toggle("completed");
+
 
       });
 
 
       // This function is to delete completed item
     document
-        .querySelector(".items")
+        .querySelector(".items ")
         .addEventListener("click", function removeItem(remove){
+        remove.target.parentNode.parentNode.remove();
         console.log(remove.target);
-
-        remove.target.removeItem;
-
-        // console.log("I am here");
 
       });
 
