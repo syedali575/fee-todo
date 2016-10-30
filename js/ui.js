@@ -57,27 +57,23 @@
     });
 
 
-      // This function is to put a line through on completed
+      // This function is to put a line-through completed & remove deleted
     document
         .querySelector(".items")
         .addEventListener("click", function lineThrough(line){
-        line.target.parentNode.classList.toggle("completed");
+          console.log(line.target);
+
+          if ( line.target.tagName === 'BUTTON' && line.target.className === 'check' ) {
+          console.log("completed");
+          line.target.parentNode.classList.toggle("completed");
+
+          }
+          else if ( line.target.tagName === 'BUTTON' && line.target.className === 'delete' ) {
+          console.log("delete");
+              line.target.parentNode.parentNode.remove();
+          }
 
 
       });
-
-
-      // This function is to delete completed item
-    document
-        .querySelector(".items ")
-        .addEventListener("click", function removeItem(remove){
-        remove.target.parentNode.parentNode.remove();
-        console.log(remove.target);
-
-      });
-
-
-
-
 
 })();
