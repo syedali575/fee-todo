@@ -19,6 +19,9 @@
       // Creatiion of artilce element to attach to  li
       var newArticle = document.createElement("article");
 
+      // Creation of new array to hold new todos
+      var listItem = [];
+
 
       //Creation of check button element to attach to article
       var newCheckButton = document.createElement("button");
@@ -50,8 +53,17 @@
       document.querySelector(".items").appendChild(newList);
 
 
-      // Creation of new array to hold new todos
-      var listItem = [];
+
+      var toDoList = {
+        text: newTodo,
+        time: Date.now()
+      };
+
+      listItem.push(toDoList);
+      console.log(listItem);
+
+
+
 
 
     });
@@ -61,16 +73,16 @@
     document
         .querySelector(".items")
         .addEventListener("click", function lineThrough(line){
-          console.log(line.target);
+          // console.log(line.target);
 
           if ( line.target.tagName === 'BUTTON' && line.target.className === 'check' ) {
-          console.log("completed");
+          // console.log("completed");
           line.target.parentNode.classList.toggle("completed");
 
           }
           else if ( line.target.tagName === 'BUTTON' && line.target.className === 'delete' ) {
-          console.log("delete");
-              line.target.parentNode.parentNode.remove();
+          // console.log("delete");
+          line.target.parentNode.parentNode.remove();
           }
 
 
